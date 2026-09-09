@@ -4,47 +4,69 @@
 
 @layer utilities {
   @keyframes fadeIn {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1;
-    }
+    from { opacity: 0; }
+    to { opacity: 1; }
   }
-
   @keyframes slideLeft {
-    from {
-      transform: translateX(100%);
-    }
-    to {
-      transform: translateX(0);
-    }
+    from { transform: translateX(100%); }
+    to { transform: translateX(0); }
   }
-
-  .animate-fade-in {
-    animation: fadeIn 0.2s ease-out forwards;
-  }
-
-  .animate-slide-left {
-    animation: slideLeft 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-  }
+  .animate-fade-in { animation: fadeIn 0.2s ease-out forwards; }
+  .animate-slide-left { animation: slideLeft 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
 }
 
 /* Custom modern scrollbars */
-::-webkit-scrollbar {
-  width: 6px;
-  height: 6px;
-}
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: rgba(156, 163, 175, 0.4); border-radius: 9999px; }
+::-webkit-scrollbar-thumb:hover { background: rgba(156, 163, 175, 0.7); }
 
-::-webkit-scrollbar-track {
-  background: transparent;
+/* Developer-first Studio presentation */
+body:has(aside.w-80) { background: #f1f5f9; }
+body:has(aside.w-80) aside.w-80 {
+  width: 22rem;
+  background: #0f172a;
+  border-color: #1e293b;
+  box-shadow: 1px 0 0 rgba(15, 23, 42, 0.08);
 }
-
-::-webkit-scrollbar-thumb {
-  background: rgba(156, 163, 175, 0.4);
-  border-radius: 9999px;
+body:has(aside.w-80) aside.w-80 > div:first-child {
+  padding: .5rem;
+  background: #111827;
+  border-color: #1e293b;
+  gap: .25rem;
 }
+body:has(aside.w-80) aside.w-80 > div:first-child button {
+  min-height: 2.25rem;
+  border-radius: .5rem;
+  color: #94a3b8;
+}
+body:has(aside.w-80) aside.w-80 > div:first-child button:hover {
+  background: #1e293b;
+  color: #e2e8f0;
+}
+body:has(aside.w-80) aside.w-80 > div:first-child button.bg-white {
+  background: #1e293b;
+  color: #60a5fa;
+  box-shadow: none;
+}
+body:has(aside.w-80) aside.w-80 > div:last-child {
+  padding: 1rem;
+  background: #0f172a;
+}
+body:has(aside.w-80) aside.w-80 input,
+body:has(aside.w-80) aside.w-80 textarea,
+body:has(aside.w-80) aside.w-80 select {
+  transition: border-color .15s ease, box-shadow .15s ease, background-color .15s ease;
+}
+body:has(aside.w-80) aside.w-80 input:focus,
+body:has(aside.w-80) aside.w-80 textarea:focus,
+body:has(aside.w-80) aside.w-80 select:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, .15);
+  outline: none;
+}
+body:has(aside.w-80) aside.w-80 button { -webkit-tap-highlight-color: transparent; }
 
-::-webkit-scrollbar-thumb:hover {
-  background: rgba(156, 163, 175, 0.7);
+@media (max-width: 1024px) {
+  body:has(aside.w-80) aside.w-80 { width: 19rem; }
 }
