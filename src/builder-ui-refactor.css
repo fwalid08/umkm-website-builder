@@ -1,0 +1,99 @@
+/* Developer-first visual polish. Presentation only; no builder/config behavior changes. */
+
+:root { --builder-border: #e2e8f0; --builder-muted: #64748b; --builder-panel: #ffffff; }
+
+header.h-16,
+header.h-\[68px\] {
+  height: 68px !important;
+  border-color: var(--builder-border) !important;
+  background: rgba(255,255,255,.96) !important;
+  backdrop-filter: blur(16px);
+  box-shadow: 0 1px 0 rgba(15,23,42,.03);
+}
+
+aside.w-80,
+aside.w-\[320px\] {
+  width: 320px !important;
+  border-color: var(--builder-border) !important;
+  background: var(--builder-panel) !important;
+}
+
+@media (min-width: 1280px) {
+  aside.w-\[320px\] { width: 344px !important; }
+}
+
+/* Top-level builder controls */
+header button,
+header input { transition: all .16s ease; }
+
+header input { letter-spacing: -.01em; }
+header input:hover { background: #f8fafc !important; }
+header input:focus { box-shadow: 0 0 0 3px rgba(99,102,241,.10); }
+
+/* Sidebar tabs */
+aside > div:first-child {
+  padding: 8px !important;
+  gap: 4px !important;
+  background: #f8fafc !important;
+  border-color: var(--builder-border) !important;
+}
+
+aside > div:first-child button {
+  min-height: 34px;
+  border-radius: 9px !important;
+  font-size: 11px !important;
+}
+
+/* Sidebar content */
+aside > div:nth-child(2) { padding: 16px !important; }
+
+aside h3 { letter-spacing: .06em; }
+aside .rounded-2xl { border-radius: 12px !important; }
+aside .rounded-xl { border-radius: 9px !important; }
+
+/* Section cards */
+aside .space-y-2 > div {
+  box-shadow: 0 1px 2px rgba(15,23,42,.04);
+}
+
+aside .border-gray-200:hover { box-shadow: 0 5px 16px rgba(15,23,42,.07); }
+
+/* Builder canvas gets a studio-like workspace surface */
+main.flex-1 {
+  background: #f1f5f9 !important;
+}
+
+main.flex-1 > div {
+  box-shadow: 0 12px 40px rgba(15,23,42,.10);
+}
+
+/* Dark builder mode */
+.dark header.h-16,
+.dark header.h-\[68px\] {
+  background: rgba(15,23,42,.97) !important;
+  border-color: #1e293b !important;
+}
+
+.dark aside.w-80,
+.dark aside.w-\[320px\] {
+  background: #020617 !important;
+  border-color: #1e293b !important;
+}
+
+.dark aside > div:first-child { background: #0f172a !important; border-color: #1e293b !important; }
+.dark main.flex-1 { background: #020617 !important; }
+
+/* Scrollbars */
+aside ::-webkit-scrollbar,
+main ::-webkit-scrollbar { width: 7px; height: 7px; }
+aside ::-webkit-scrollbar-thumb,
+main ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 99px; }
+.dark aside ::-webkit-scrollbar-thumb { background: #334155; }
+
+/* Keep mobile layout usable */
+@media (max-width: 767px) {
+  aside.w-80,
+  aside.w-\[320px\] { width: 280px !important; }
+  header.h-16,
+  header.h-\[68px\] { padding-left: 12px !important; padding-right: 12px !important; }
+}
