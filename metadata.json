@@ -1,0 +1,7 @@
+{
+  "name": "SitusUMKM Website Builder",
+  "description": "A configuration-driven website builder and renderer for small businesses and UMKM with reusable templates, section registry, and HTML export.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
+
